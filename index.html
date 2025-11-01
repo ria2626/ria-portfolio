@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ria Sharma - Full Stack Developer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation
+            const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetSection = document.getElementById(targetId);
+
+                    if (targetSection) {
+                        const offsetTop = targetSection.offsetTop - 80; // Account for fixed header
+                        window.scrollTo({
+                            top: offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+
+                    // Close mobile menu if open
+                    const navMenu = document.querySelector('.nav-menu');
+                    const navToggle = document.querySelector('.nav-toggle');
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        navToggle.classList.remove('active');
+                    }
+                });
+            });
+
+            // Mobile menu toggle
+            const navToggle = document.querySelector('.nav-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="nav-menu">
+                    <ul>
+                        <li><a href="#hero">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>Hi, I'm <span class="highlight">Ria Sharma</span></h1>
+                <h2>Full Stack Developer & Tech Enthusiast</h2>
+                <p class="hero-description">
+                    I craft digital experiences that blend creativity with cutting-edge technology.
+                    Specializing in modern web development with PHP, WordPress, Next.js, React.js, Node.js, and Laravel.
+                </p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">100%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">View My Work</a>
+                    <a href="#contact" class="btn-secondary">Get In Touch</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="image-container">
+                    <div class="floating-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                        <div class="shape shape-3"></div>
+                    </div>
+                    <div class="profile-placeholder">
+                        <div class="profile-glow"></div>
+                        <div class="profile-avatar">
+                            <span class="avatar-text">RS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-header">
+                <h2>About Me</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-intro">
+                        <h3>Hello, I'm Ria Sharma</h3>
+                        <p class="lead-text">A passionate full-stack developer who turns ideas into digital reality</p>
+                    </div>
+
+                    <div class="about-description">
+                        <p>With over 5 years of experience in web development, I specialize in creating robust, scalable web applications using modern technologies. My expertise spans across the full stack, from crafting beautiful user interfaces to building powerful backend systems.</p>
+
+                        <p>I believe in writing clean, efficient code and staying up-to-date with the latest industry trends. My journey in tech has been driven by curiosity and a desire to solve complex problems through innovative solutions.</p>
+                    </div>
+
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🎯</div>
+                            <div class="highlight-content">
+                                <h4>Problem Solver</h4>
+                                <p>Love tackling complex challenges and finding elegant solutions</p>
+                            </div>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon">🚀</div>
+                            <div class="highlight-content">
+                                <h4>Tech Enthusiast</h4>
+                                <p>Always learning and exploring new technologies</p>
+                            </div>
+                        </div>
+
+                        <div class="highlight-item">
+                            <div class="highlight-icon">💡</div>
+                            <div class="highlight-content">
+                                <h4>Innovative Thinker</h4>
+                                <p>Bringing creative ideas to life through code</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-visual">
+                    <div class="profile-image-section">
+                        <div class="profile-image">
+                            <div class="profile-glow"></div>
+                            <div class="profile-circle">
+                                <span class="profile-initials">RS</span>
+                            </div>
+                        </div>
+                        <div class="profile-badges">
+                            <span class="badge">Full Stack Developer</span>
+                            <span class="badge">Problem Solver</span>
+                            <span class="badge">Tech Enthusiast</span>
+                        </div>
+                    </div>
+
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <div class="stat-number">5+</div>
+                            <div class="stat-text">Years Experience</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-text">Projects Done</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-text">Client Satisfaction</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">6+</div>
+                            <div class="stat-text">Technologies</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="container">
+            <div class="skills-header">
+                <h2>My Skills & Expertise</h2>
+                <div class="section-divider"></div>
+                <p class="skills-subtitle">Technologies I work with to bring ideas to life</p>
+            </div>
+
+            <div class="skills-showcase">
+                <div class="skill-card advanced">
+                    <div class="skill-icon">🐘</div>
+                    <div class="skill-content">
+                        <h3>PHP</h3>
+                        <!-- <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 95%"></div>
+                            </div>
+                            <span class="skill-percent">95%</span>
+                        </div> -->
+                        <p>10+ years of experience in server-side scripting, web development, and backend logic.</p>
+                    </div>
+                    <div class="skill-glow"></div>
+                </div>
+
+                <div class="skill-card advanced">
+                    <div class="skill-icon">🌐</div>
+                    <div class="skill-content">
+                        <h3>WordPress</h3>
+                        <!-- <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 90%"></div>
+                            </div>
+                            <span class="skill-percent">90%</span>
+                        </div> -->
+                        <p>Expert in custom theme development, plugin creation, and WordPress customization.</p>
+                    </div>
+                    <div class="skill-glow"></div>
+                </div>
+
+                <div class="skill-card intermediate">
+                    <div class="skill-icon">⚛️</div>
+                    <div class="skill-content">
+                        <h3>Next.js</h3>
+                        <!-- <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 52%"></div>
+                            </div>
+                            <span class="skill-percent">52%</span>
+                        </div> -->
+                        <p>2 years of experience in server-side rendering, static site generation, and React-based web applications.</p>
+                    </div>
+                    <div class="skill-glow"></div>
+                </div>
+
+                <div class="skill-card intermediate">
+                    <div class="skill-icon">⚛️</div>
+                    <div class="skill-content">
+                        <h3>React.js</h3>
+                        <!-- <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 50%"></div>
+                            </div>
+                            <span class="skill-percent">50%</span>
+                        </div> -->
+                        <p>Proficient in building interactive user interfaces and single-page applications.</p>
+                    </div>
+                    <div class="skill-glow"></div>
+                </div>
+
+                <div class="skill-card intermediate">
+                    <div class="skill-icon">🟢</div>
+                    <div class="skill-content">
+                        <h3>Node.js</h3>
+                        <!-- <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 40%"></div>
+                            </div>
+                            <span class="skill-percent">40%</span>
+                        </div> -->
+                        <p>Experienced in server-side JavaScript, API development, and backend services.</p>
+                    </div>
+                    <div class="skill-glow"></div>
+                </div>
+
+                <div class="skill-card beginner">
+                    <div class="skill-icon">🎯</div>
+                    <div class="skill-content">
+                        <h3>Laravel</h3>
+                        <!-- <div class="skill-level">
+                            <div class="skill-bar">
+                                <div class="skill-fill" style="width: 70%"></div>
+                            </div>
+                            <span class="skill-percent">0%</span>
+                        </div> -->
+                        <p>Currently learning this powerful PHP framework for modern web applications.</p>
+                    </div>
+                    <div class="skill-glow"></div>
+                </div>
+            </div>
+
+            <div class="skills-stats">
+                <div class="stat-item">
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">Technologies</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <div class="projects-header">
+                <h2>My Featured Projects</h2>
+                <div class="section-divider"></div>
+                <p class="projects-subtitle">Showcasing my expertise across different technologies and platforms</p>
+            </div>
+
+            <div class="projects-showcase">
+                <div class="project-card featured">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                        <div class="project-tech">
+                            <span class="tech-badge">WordPress</span>
+                            <span class="tech-badge">PHP</span>
+                        </div>
+                        <div class="project-icon">🔧</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>WordPress Plugin: Custom Contact Form</h3>
+                        <p>A custom WordPress plugin that adds an advanced contact form with validation and email integration. Features include spam protection, custom styling options, and admin dashboard.</p>
+                        <div class="project-links">
+                            <a href="projects/wordpress-plugin/" class="project-link primary">View Details</a>
+                            <a href="projects/wordpress-plugin/" class="project-link secondary">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                        <div class="project-tech">
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">MySQL</span>
+                        </div>
+                        <div class="project-icon">🛒</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>PHP E-commerce Platform</h3>
+                        <p>A full-featured e-commerce website built with PHP, featuring user authentication, product management, shopping cart, and secure payment integration with PayPal.</p>
+                        <div class="project-links">
+                            <a href="projects/php-ecommerce/" class="project-link primary">View Details</a>
+                            <a href="projects/php-ecommerce/" class="project-link secondary">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                        <div class="project-tech">
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">React</span>
+                        </div>
+                        <div class="project-icon">📝</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Next.js Blog Application</h3>
+                        <p>A modern blog application built with Next.js, featuring server-side rendering, dynamic content management, SEO optimization, and responsive design.</p>
+                        <div class="project-links">
+                            <a href="projects/nextjs-blog/" class="project-link primary">View Details</a>
+                            <a href="projects/nextjs-blog/" class="project-link secondary">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                        <div class="project-tech">
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">Express</span>
+                        </div>
+                        <div class="project-icon">🔌</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Node.js REST API</h3>
+                        <p>A robust REST API built with Node.js and Express, designed for scalable web applications. Includes authentication, rate limiting, and comprehensive documentation.</p>
+                        <div class="project-links">
+                            <a href="projects/nodejs-api/" class="project-link primary">View Details</a>
+                            <a href="projects/nodejs-api/" class="project-link secondary">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                        <div class="project-tech">
+                            <span class="tech-badge">Laravel</span>
+                            <span class="tech-badge">PHP</span>
+                        </div>
+                        <div class="project-icon">✅</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Laravel Task Manager</h3>
+                        <p>A simple task management application built with Laravel, demonstrating CRUD operations, user authentication, and modern PHP development practices.</p>
+                        <div class="project-links">
+                            <a href="projects/laravel-tasks/" class="project-link primary">View Details</a>
+                            <a href="projects/laravel-tasks/" class="project-link secondary">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay"></div>
+                        <div class="project-tech">
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">Express</span>
+                        </div>
+                        <div class="project-icon">🚀</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Full-Stack Next.js + Node.js Application</h3>
+                        <p>A comprehensive full-stack web application combining Next.js for the frontend with server-side rendering and Node.js/Express for the backend API. Features include user authentication, real-time updates, and modern development practices.</p>
+                        <div class="project-links">
+                            <a href="projects/nextjs-nodejs/" class="project-link primary">View Details</a>
+                            <a href="projects/nextjs-nodejs/" class="project-link secondary">Live Demo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>I'm always open to new opportunities and collaborations. Feel free to reach out!</p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">📧</div>
+                    <h3>Email</h3>
+                    <p>riagys2690@gmail.com</p>
+                    <a href="mailto:riagys2690@gmail.com" class="contact-link">Send Email</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">💼</div>
+                    <h3>LinkedIn</h3>
+                    <p>Professional Network</p>
+                    <a href="https://linkedin.com/in/ria-sharma" target="_blank" class="contact-link">Connect</a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">💻</div>
+                    <h3>GitHub</h3>
+                    <p>View My Code</p>
+                    <a href="https://github.com/ria2626" target="_blank" class="contact-link">Follow</a>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h3>Let's Work Together!</h3>
+                <p>Ready to bring your ideas to life? Let's create something amazing together.</p>
+                <a href="mailto:riagys2690@gmail.com" class="cta-button">Get In Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Ria Sharma. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

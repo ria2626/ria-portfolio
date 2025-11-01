@@ -1,0 +1,31 @@
+{
+  "name": "nextjs-blog",
+  "version": "1.0.0",
+  "description": "A modern blog application built with Next.js and TypeScript, featuring server-side rendering and dynamic content management.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "^13.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "gray-matter": "^4.0.3",
+    "remark": "^14.0.2",
+    "remark-html": "^15.0.1",
+    "next-mdx-remote": "^4.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^13.0.0",
+    "typescript": "^4.8.0"
+  },
+  "author": "John Doe",
+  "license": "MIT"
+}
